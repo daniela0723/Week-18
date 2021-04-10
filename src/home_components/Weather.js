@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import "../App.css";
 
 function Weather() {
-  //API Key is undefined when called from .env
+  //API Key is called from .env
   //Github will not upload files with an API Key
   const [weather, setWeather] = useState("");
   const [temperature, setTemperature] = useState(0);
