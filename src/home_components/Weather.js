@@ -13,7 +13,7 @@ function Weather() {
   const fetchWeather = async () => {
     try {
       const res = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?zip=89030,us&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=imperial`
+        `https://api.openweathermap.org/data/2.5/weather?zip=89030,us&appid=${API_KEY}&units=imperial`
       );
       setTemperature(Math.round(res.data.main.temp));
       setCityName(res.data.name);
