@@ -4,7 +4,7 @@ import "../App.css";
 
 function Weather() {
   //API Key is undefined when called from .env
-  //const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+  //Github will not upload files with an API Key
   const [weather, setWeather] = useState("");
   const [temperature, setTemperature] = useState(0);
   const [cityName, setCityName] = useState("");
@@ -13,8 +13,7 @@ function Weather() {
   const fetchWeather = async () => {
     try {
       const res = await axios.get(
-        //`https://api.openweathermap.org/data/2.5/weather?zip=89030,us&appid=${API_KEY}&units=imperial`
-        `https://api.openweathermap.org/data/2.5/weather?zip=89030,us&appid=dfbf931af21c1d30725fdb26f81f0a53&units=imperial`
+        `https://api.openweathermap.org/data/2.5/weather?zip=89030,us&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=imperial`
       );
       setTemperature(Math.round(res.data.main.temp));
       setCityName(res.data.name);
